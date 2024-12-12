@@ -56,7 +56,16 @@ public class MenuImplementacion implements MenuInterfaz {
 		
 		System.out.println("Introduzca su DNI: ");
 		String dniPaciente = sc.next();
-		li.comprobarDni(dniPaciente);
+		
+		//Comprobamos que el DNI tenga 9 digitos
+		if (dniPaciente.length() != 9) {
+			System.out.println("El DNI que has introducido es erroneo, vuelve a introducirlo");
+			registroLlegada();
+		}
+		
+		if(li.comprobarDni(dniPaciente)) {
+			
+		}
 		
 	}
 	
