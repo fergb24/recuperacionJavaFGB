@@ -7,10 +7,20 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Clase encargada de toda la lógica sobre las consultas
+ */
 public class ConsultasImplementacion implements ConsultasInterfaz {
 
     Scanner sc = new Scanner(System.in);
 
+    /**
+     * Método que comprueba el departamento y la fecha que introduce el usuario
+     * para mostrar la consulta
+     * 
+     * @param especialidad
+     * @return
+     */
     public boolean mostrarConsulta(int especialidad) {
 
         System.out.println("Introduce la fecha de la cita (dd-MM-yyyy): ");
@@ -59,6 +69,13 @@ public class ConsultasImplementacion implements ConsultasInterfaz {
         return hayCitas;
     }
     
+    /**
+     * Método que comprueba el departamento y la fecha que introduce el usuario
+     * para imprimir en un archivo la consulta
+     * 
+     * @param especialidad
+     * @return
+     */
     public boolean imprimirConsulta(int especialidad) {
         System.out.println("Introduce la fecha de la cita (dd-MM-yyyy): ");
         String fecha = sc.next();
