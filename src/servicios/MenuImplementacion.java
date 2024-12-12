@@ -82,7 +82,7 @@ public class MenuImplementacion implements MenuInterfaz {
 	 */
 	public int mostrarListadoConsulta() {
 		
-		int opcionMenuGerencia = 5;
+		int opcionListadoConsulta = 5;
 		
 		try {
 			System.out.println("****************************************************");
@@ -90,22 +90,22 @@ public class MenuImplementacion implements MenuInterfaz {
 			System.out.println("*            Menú listado de consultas             *");
 			System.out.println("*                                                  *");
 			System.out.println("* 0. Volver al menú principal                      *");
-			System.out.println("* 1.                           *");
+			System.out.println("* 1. Mostrar consultas                             *");
+			System.out.println("* 2. Imprimir consultas                            *");
 			System.out.println("*                                                  *");
 			System.out.println("****************************************************");
 			System.out.println();
 			System.out.print("Selecciona una opción: ");
 			
-			opcionMenuGerencia = sc.nextInt();
+			opcionListadoConsulta = sc.nextInt();
 			
 		} catch (Exception e) {
 			//Si ocurre un error, se mostrará un mensaje de error y el menú de nuevo
-			
 			System.out.println("Algo no ha salido bien, vuelve a intentarlo");
 			mostrarListadoConsulta();
 		}
 		
-		return opcionMenuGerencia;
+		return opcionListadoConsulta;
 	}
 	
 	/**
@@ -121,7 +121,9 @@ public class MenuImplementacion implements MenuInterfaz {
 			case 0:
 				break;
 			case 1:
-				
+				break;
+			case 2:
+				mostrarSubMenuConsultas();
 				break;
 			default:
 				System.out.println("No has seleccionado una opción válida");
@@ -129,6 +131,65 @@ public class MenuImplementacion implements MenuInterfaz {
 				break;
 		
 		}
+		
+	}
+	
+	/**
+	 * Este método se encarga de mostrar el menú de listado de tipos de consultas
+	 * @return Devuelve un número entero con la opción requerida
+	 */
+	public int mostrarSubMenuConsultas() {
+		
+		int opcionSubMenu = 5;
+		
+		try {
+			System.out.println("****************************************************");
+			System.out.println("*                                                  *");
+			System.out.println("* 0. Volver al menú principal                      *");
+			System.out.println("* 1. Psicología                                    *");
+			System.out.println("* 2. Traumatología                                 *");
+			System.out.println("* 3. Fisioterapia                                  *");
+			System.out.println("*                                                  *");
+			System.out.println("****************************************************");
+			System.out.println();
+			System.out.print("Selecciona una opción: ");
+			
+			opcionSubMenu = sc.nextInt();
+			
+		} catch (Exception e) {
+			//Si ocurre un error, se mostrará un mensaje de error y el menú de nuevo
+			System.out.println("Algo no ha salido bien, vuelve a intentarlo");
+			mostrarListadoConsulta();
+		}
+		
+		return opcionSubMenu;
+	}
+	
+	/**
+	 * Este método se encarga de la lógica del submenu de tipos de consultas
+	 */
+	public void navSubMenu() {
+		
+		int opcionSubMenu;
+		
+		opcionSubMenu = mostrarListadoConsulta();
+			
+		switch(opcionSubMenu) {
+			case 0:
+				break;
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			default:
+				System.out.println("No has seleccionado una opción válida");
+				navSubMenu();
+				break;
+		
+		}
+		
 	}
 
 }
