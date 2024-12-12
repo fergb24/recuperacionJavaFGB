@@ -121,9 +121,10 @@ public class MenuImplementacion implements MenuInterfaz {
 			case 0:
 				break;
 			case 1:
+				navSubMenu(1);
 				break;
 			case 2:
-				navSubMenu();
+				navSubMenu(2);
 				break;
 			default:
 				System.out.println("No has seleccionado una opción válida");
@@ -138,7 +139,7 @@ public class MenuImplementacion implements MenuInterfaz {
 	 * Este método se encarga de mostrar el menú de listado de tipos de consultas
 	 * @return Devuelve un número entero con la opción requerida
 	 */
-	public int mostrarSubMenuConsultas2() {
+	public int mostrarSubMenuConsultas() {
 		
 		int opcionSubMenu = 5;
 		
@@ -159,7 +160,7 @@ public class MenuImplementacion implements MenuInterfaz {
 		} catch (Exception e) {
 			//Si ocurre un error, se mostrará un mensaje de error y el menú de nuevo
 			System.out.println("Algo no ha salido bien, vuelve a intentarlo");
-			mostrarSubMenuConsultas2();
+			mostrarSubMenuConsultas();
 		}
 		
 		return opcionSubMenu;
@@ -168,24 +169,40 @@ public class MenuImplementacion implements MenuInterfaz {
 	/**
 	 * Este método se encarga de la lógica del submenu de tipos de consultas
 	 */
-	public void navSubMenu() {
+	public void navSubMenu(int opcion) {
 		
 		int opcionSubMenu;
 		
-		opcionSubMenu = mostrarSubMenuConsultas2();
+		opcionSubMenu = mostrarSubMenuConsultas();
 			
 		switch(opcionSubMenu) {
 			case 0:
 				break;
 			case 1:
+				if (opcion == 1) {
+					System.out.println("Mostrar psico");
+					
+				} else {
+					//imprimirConsulta(1)
+				}
 				break;
 			case 2:
+				if (opcion == 1) {
+					System.out.println("Mostrar trauma");
+				} else {
+					//imprimirConsulta(2)
+				}
 				break;
 			case 3:
+				if (opcion == 1) {
+					System.out.println("Mostrar fisio");
+				} else {
+					//imprimirConsulta(3)
+				}
 				break;
 			default:
 				System.out.println("No has seleccionado una opción válida");
-				navSubMenu();
+				navSubMenu(opcion);
 				break;
 		
 		}
