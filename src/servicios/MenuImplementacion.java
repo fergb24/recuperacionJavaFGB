@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class MenuImplementacion implements MenuInterfaz {
 	
 	Scanner sc = new Scanner(System.in);
-	LlegadaImplementacion li;
+	LlegadaImplementacion li = new LlegadaImplementacion();
 	
 	/**
 	 * Este método sirve para mostrar el menú de navegación
@@ -61,10 +61,16 @@ public class MenuImplementacion implements MenuInterfaz {
 		if (dniPaciente.length() != 9) {
 			System.out.println("El DNI que has introducido es erroneo, vuelve a introducirlo");
 			registroLlegada();
-		}
-		
-		if(li.comprobarDni(dniPaciente)) {
+		} else {
 			
+			if(li.comprobarDni(dniPaciente)) {
+				System.out.println("Todo correcto!");
+			} else {
+				System.out.println("El DNI que has introducido es inválido. Por favor, introduce uno que sea correcto");
+				//Reseteamos el buffer del scanner
+				sc.nextLine();
+				registroLlegada();
+			}
 		}
 		
 	}
