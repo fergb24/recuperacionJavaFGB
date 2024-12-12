@@ -25,7 +25,7 @@ public class Inicio {
 					salir = true;
 					break;
 				case 1:
-					mi.navRegistroLlegada();
+					mi.registroLlegada();
 					break;
 				case 2:
 					mi.navListadoConsulta();
