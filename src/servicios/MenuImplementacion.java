@@ -9,6 +9,7 @@ public class MenuImplementacion implements MenuInterfaz {
 	
 	Scanner sc = new Scanner(System.in);
 	LlegadaImplementacion li = new LlegadaImplementacion();
+	ConsultasImplementacion ci = new ConsultasImplementacion();
 	
 	/**
 	 * Este método sirve para mostrar el menú de navegación
@@ -180,24 +181,25 @@ public class MenuImplementacion implements MenuInterfaz {
 				break;
 			case 1:
 				if (opcion == 1) {
-					System.out.println("Mostrar psico");
+					ci.mostrarConsulta(1);
 					
 				} else {
-					//imprimirConsulta(1)
+					ci.imprimirConsulta(1);
 				}
 				break;
 			case 2:
 				if (opcion == 1) {
-					System.out.println("Mostrar trauma");
+					ci.mostrarConsulta(2);
+					
 				} else {
-					//imprimirConsulta(2)
+					ci.imprimirConsulta(2);
 				}
 				break;
 			case 3:
 				if (opcion == 1) {
-					System.out.println("Mostrar fisio");
+					ci.mostrarConsulta(3);
 				} else {
-					//imprimirConsulta(3)
+					ci.imprimirConsulta(3);
 				}
 				break;
 			default:
