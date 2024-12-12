@@ -16,6 +16,7 @@ public class LlegadaImplementacion implements LlegadaInterfaz {
 		//Separamos el usuario en numeros y letra
 		String numeros = dni.substring(0, 8);
         char letraUsuario = dni.charAt(8);
+        boolean encontrado = false;
         
         //Se calcula la letra correspondiente
         try {
@@ -36,16 +37,22 @@ public class LlegadaImplementacion implements LlegadaInterfaz {
 
                     // Comprueba si el DNI coincide
                     if (partes[0].equals(dni)) {
+                    	encontrado = true;
                         // Devuelve el cuarto dato (índice 3, ya que los índices empiezan en 0)
-                        System.out.println(partes[3]);
+                        System.out.println("Espere su turno para " + partes[3] + " en la sala de espera. Su especialista le avisará.");
                     }
                 }
+                
+               if (!encontrado) {
+            	   System.out.println("No dispone de cita previa para hoy.");
+               }
             } catch (IOException e) {
                 System.err.println("Error al leer el archivo: " + e.getMessage());
             }
             
             return true;
         } catch (NumberFormatException e) {
+        	
             return false; // Si no se puede convertir a número, el DNI es inválido
         }
 	}

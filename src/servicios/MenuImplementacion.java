@@ -65,7 +65,6 @@ public class MenuImplementacion implements MenuInterfaz {
 		} else {
 			
 			if(li.comprobarDni(dniPaciente, "src/data/citas.txt")) {
-				System.out.println("Todo correcto!");
 				
 			} else {
 				System.out.println("El DNI que has introducido es inválido. Por favor, introduce uno que sea correcto");
