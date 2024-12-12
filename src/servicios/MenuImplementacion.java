@@ -123,7 +123,7 @@ public class MenuImplementacion implements MenuInterfaz {
 			case 1:
 				break;
 			case 2:
-				mostrarSubMenuConsultas();
+				navSubMenu();
 				break;
 			default:
 				System.out.println("No has seleccionado una opción válida");
@@ -138,7 +138,7 @@ public class MenuImplementacion implements MenuInterfaz {
 	 * Este método se encarga de mostrar el menú de listado de tipos de consultas
 	 * @return Devuelve un número entero con la opción requerida
 	 */
-	public int mostrarSubMenuConsultas() {
+	public int mostrarSubMenuConsultas2() {
 		
 		int opcionSubMenu = 5;
 		
@@ -159,7 +159,7 @@ public class MenuImplementacion implements MenuInterfaz {
 		} catch (Exception e) {
 			//Si ocurre un error, se mostrará un mensaje de error y el menú de nuevo
 			System.out.println("Algo no ha salido bien, vuelve a intentarlo");
-			mostrarListadoConsulta();
+			mostrarSubMenuConsultas2();
 		}
 		
 		return opcionSubMenu;
@@ -172,7 +172,7 @@ public class MenuImplementacion implements MenuInterfaz {
 		
 		int opcionSubMenu;
 		
-		opcionSubMenu = mostrarListadoConsulta();
+		opcionSubMenu = mostrarSubMenuConsultas2();
 			
 		switch(opcionSubMenu) {
 			case 0:
